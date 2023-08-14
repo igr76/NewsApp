@@ -16,13 +16,14 @@ import java.time.LocalDateTime;
 public class Feed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @Column(name = "name")
     public String name;
     @Column(name = "content")
     private String content;
     @Column(name = "data")
     private LocalDateTime data;
-    @Column(name = "category_id")
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 }
