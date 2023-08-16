@@ -28,7 +28,7 @@ import java.util.Collection;
 @RequiredArgsConstructor
 //@Tag()
 public class FeedController {
-    private final FeedService feedService;
+    private  FeedService feedService;
 
 
     @Operation(summary = "Получить все новости")

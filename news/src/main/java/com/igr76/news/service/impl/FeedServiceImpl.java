@@ -61,7 +61,7 @@ public class FeedServiceImpl implements FeedService {
     @Override
     public void addFeed(GreateFeedDto greateFeedDto) {
         Feed feed = new Feed();
-        feed.setId(feedRepository.count() +1);
+        feed.setId(feedRepository.count() +1l);
         feed.setName(greateFeedDto.getName());
         feedRepository.save(feed);    }
 
