@@ -1,8 +1,14 @@
 package com.igr76.news.dto;
 
+import com.igr76.news.entity.Category;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
+/**
+ * A updateDTO for the {@link com.igr76.news.entity.Feed} entity
+ */
 @Getter
 @Setter
 @ToString
@@ -10,6 +16,16 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class UpdateFeedDto {
+    /**    Идентификатор новости     */
+    private Long id;
+    /**    Заголовок новости     */
     @Size(min = 3, max = 100)
-    private String name;
+    public String name;
+    /**    Содержание новости     */
+    private String content;
+    /**    Дата новости     */
+    private LocalDateTime data;
+    /**    Категория новости     */
+    private Category category;
+
 }

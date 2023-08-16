@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-
+/**
+ * Сущность {@link Category} entity
+ */
 @Getter
 @Setter
 @ToString
@@ -14,9 +16,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "categoryes")
 public class Category {
+    /**    Идентификатор категории     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    /**    Название категории     */
     @Column(name = "name")
     private String name;
 

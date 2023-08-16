@@ -1,6 +1,7 @@
 package com.igr76.news.service.impl;
 
 import com.igr76.news.dto.FeedDto;
+import com.igr76.news.dto.GreateFeedDto;
 import com.igr76.news.dto.UpdateFeedDto;
 import com.igr76.news.entity.Category;
 import com.igr76.news.entity.Feed;
@@ -46,7 +47,7 @@ public class FeedServiceImpl implements FeedService {
     }
 
     @Override
-    public Collection<FeedDto> findNewsByLike(String like) {
+    public Collection<FeedDto> findNewsByString(String like) {
         return null;
     }
 
@@ -58,13 +59,15 @@ public class FeedServiceImpl implements FeedService {
     }
 
     @Override
-    public void addFeed(FeedDto feedDto) {
-        if (!feedRepository.existsById(feedDto.getId())) {new FeedDuplicateException(feedDto.getId());        }
-        feedRepository.save(feedMapper.toEntity(feedDto));
-    }
+    public void addFeed(GreateFeedDto greateFeedDto) {
+        Feed feed = new Feed();
+        feed.setId(feedRepository.count() +1);
+        feed.setName(greateFeedDto.getName());
+        feedRepository.save(feed);    }
 
     @Override
-    public void deleteFeed(int id) {
-
-    }
+    public void deleteFeed(Long id) {
+        if (!feedRepository.existsById(id)) {new FeedDuplicateException(id);        }
+        Feed feed = feedRepository.findById(id).orElseThrow();
+        feedRepository.delete(feed);}
 }
