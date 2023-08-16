@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class Feed {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "name")
     public String name;
     @Column(name = "content")

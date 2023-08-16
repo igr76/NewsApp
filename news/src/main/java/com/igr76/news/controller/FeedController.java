@@ -23,7 +23,7 @@ public class FeedController {
             @ApiResponse(responseCode = "400", description = "..")
     })
 @PatchMapping("/{id}")
-    public FeedDto pathFeed(@PathVariable("id") int id, @RequestBody @Valid UpdateFeedDto updateFeedDto) {
+    public FeedDto pathFeed(@PathVariable("id") Long id, @RequestBody @Valid UpdateFeedDto updateFeedDto) {
     return feedService.path(id, updateFeedDto);
     }
 }
