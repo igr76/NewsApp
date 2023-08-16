@@ -42,6 +42,7 @@ public class FeedServiceImpl implements FeedService {
 
     @Override
     public Collection<FeedDto> findNewsByCategory(Category category) {
+        // может через String  категорию реализую
      //   Collection<Feed> feedCollection = feedRepository.findBy;
         return null;
     }
