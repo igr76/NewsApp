@@ -1,5 +1,5 @@
 package com.igr76.news.exception;
-
+/**   Ошибка новость не найдена          */
 public class FeedNotFoundException extends RuntimeException{
     private final long id;
 

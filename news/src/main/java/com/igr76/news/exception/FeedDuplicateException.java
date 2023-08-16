@@ -1,5 +1,5 @@
 package com.igr76.news.exception;
-
+/**   Ошибка дублирования записи          */
 public class FeedDuplicateException extends RuntimeException{
     private final long id;
 
