@@ -11,7 +11,9 @@ import com.igr76.news.loger.FormLogInfo;
 import com.igr76.news.mapper.FeedMapper;
 import com.igr76.news.repository.FeedRepository;
 import com.igr76.news.service.FeedService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -55,7 +57,11 @@ public class FeedServiceImpl implements FeedService {
 
     @Override
     public Collection<FeedDto> findNewsByString(String like) {
-        return null;
+//        CriteriaBuilder builder = session.getCriteriaBuilder();
+//        CriteriaQuery<Employee> critQuery = builder.createQuery(Employee.class);
+//        critQuery.select(critQuery.from(Feed.class)).where(builder.like(root.get("occupation"), "%тест%"));
+
+       return feedMapper.toDTOList(feedRepository.findNewsByString(like));
     }
 
     @Override

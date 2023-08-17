@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 /**
  * Сущность {@link Feed} entity
  */
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
 @ToString
