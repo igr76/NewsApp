@@ -60,7 +60,7 @@ public class FeedServiceImpl implements FeedService {
 //        CriteriaBuilder builder = session.getCriteriaBuilder();
 //        CriteriaQuery<Employee> critQuery = builder.createQuery(Employee.class);
 //        critQuery.select(critQuery.from(Feed.class)).where(builder.like(root.get("occupation"), "%тест%"));
-
+// первое решение через sql запрос
        return feedMapper.toDTOList(feedRepository.findNewsByString(like));
     }
 
